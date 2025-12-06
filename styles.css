@@ -1,0 +1,191 @@
+/* Color Scheme: #d4af37 (Gold), #333 (Dark Gray), #fff (White), #f5f5f5 (Light Gray) */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #333; /* Dark color for professionalism */
+    font-weight: 700;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #d4af37; /* Gold highlight on hover */
+}
+
+/* --- Hero Section --- */
+.hero {
+    /* IMPORTANT: Replace 'hero-bg.jpg' with your high-resolution background image */
+    background: url('hero-bg.jpg') no-repeat center/cover; 
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+/* Dark overlay for text contrast */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1;
+}
+
+.hero h1, .hero p, .hero button {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+button {
+    background: #d4af37; /* Gold */
+    color: #fff;
+    border: 2px solid #d4af37;
+    padding: 0.8rem 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background 0.3s, color 0.3s;
+    border-radius: 4px; /* Slight rounded corner for modern look */
+}
+
+button:hover {
+    background: #b0914d; /* Darker gold on hover */
+    border-color: #b0914d;
+}
+
+/* --- Featured Section --- */
+#featured {
+    padding: 4rem 0;
+    text-align: center;
+}
+
+#featured h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product {
+    background: #fff;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 8px; /* Rounded corners on product boxes */
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 4px; /* Rounded corners on images */
+}
+
+.product h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.product p {
+    font-weight: 500;
+    color: #d4af37; /* Price in Gold */
+    margin-bottom: 1rem;
+}
+
+/* --- Footer --- */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    ul {
+        gap: 1rem;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
