@@ -1,150 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ZANTIQ – Laser-Cut Luxury</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    :root{
-      --gold:#c9a45c;
-      --coal:#1e1b17;
-      --cream:#f5f2e8;
-      --rust:#7b5e47;
-    }
-    *{box-sizing:border-box;margin:0;padding:0;font-family:'Georgia',serif;color:var(--coal)}
-    body{background:var(--cream);line-height:1.6}
-    header{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:1.2rem 4vw;background:var(--coal);
-    }
-    header img{height:42px}
-    nav a{
-      margin-left:2rem;text-decoration:none;color:var(--gold);
-      letter-spacing:.5px;font-size:.95rem;
-    }
-    section{padding:6rem 4vw}
-    h1,h2{letter-spacing:1px}
-    h1{font-size:2.8rem;color:var(--gold)}
-    .hero{display:flex;flex-wrap:wrap;align-items:center;gap:3rem}
-    .hero div{flex:1 1 320px}
-    .hero img{width:100%;border:4px solid var(--rust)}
-    .btn{
-      display:inline-block;margin-top:1.2rem;padding:.9rem 2.2rem;
-      background:var(--gold);color:var(--coal);text-decoration:none;
-      border:2px solid transparent;transition:.3s;
-    }
-    .btn:hover{background:transparent;border-color:var(--gold);color:var(--gold)}
-    .row{display:flex;flex-wrap:wrap;gap:2rem}
-    .card{
-      flex:1 1 260px;background:#fff;border:1px solid var(--rust);
-      text-align:center;padding:2rem;
-    }
-    .card img{width:100%;height:200px;object-fit:cover;margin-bottom:1rem}
-    footer{
-      text-align:center;padding:2.5rem 4vw;background:var(--coal);
-      color:var(--gold);font-size:.85rem;
-    }
-    @media(max-width:700px){
-      header{flex-direction:column;align-items:flex-start}
-      nav a{margin:.5rem 1rem 0 0}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>ZANTIQ – Home Decor & Jewelry</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* ------------- RESET & BASE ------------- */
+        *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+        img{max-width:100%;display:block}
+        a{text-decoration:none;color:inherit}
+        button{cursor:pointer;border:none;background:none}
+        :root{
+            --gold:#D4AF37;
+            --sage:#87A96B;
+            --dark:#2C2C2C;
+            --light:#f7f7f7;
+            --radius:8px;
+            --max-width:1200px;
+        }
+        body{background:var(--light);color:var(--dark);line-height:1.6}
+
+        /* ------------- NAVBAR ------------- */
+        header{
+            background:#fff;
+            box-shadow:0 2px 4px rgba(0,0,0,.05);
+            position:sticky;top:0;z-index:999;
+        }
+        .nav{
+            max-width:var(--max-width);
+            margin:auto;
+            display:flex;align-items:center;justify-content:space-between;
+            padding:1rem 1.2rem;
+        }
+        .logo{font-size:1.8rem;font-weight:bold;color:var(--gold)}
+        .nav-links{display:flex;gap:1.5rem;list-style:none}
+        .nav-icons{display:flex;gap:1rem;align-items:center;font-size:1.2rem}
+        .hamburger{display:none;flex-direction:column;gap:4px}
+        .hamburger span{width:25px;height:3px;background:var(--dark)}
+
+        /* ------------- HERO ------------- */
+        .hero{
+            background:url('https://source.unsplash.com/1600x900/?interior,jewelry') center/cover no-repeat;
+            height:70vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;
+        }
+        .hero h1{font-size:3rem;margin-bottom:1rem;text-shadow:1px 1px 4px rgba(0,0,0,.6)}
+        .hero p{font-size:1.2rem;margin-bottom:2rem;text-shadow:1px 1px 3px rgba(0,0,0,.6)}
+        .btn{
+            background:var(--gold);color:#fff;padding:.75rem 1.8rem;border-radius:var(--radius);font-weight:bold;transition:.3s;
+        }
+        .btn:hover{background:var(--sage)}
+
+        /* ------------- SECTIONS ------------- */
+        section{padding:3rem 1rem;max-width:var(--max-width);margin:auto}
+        h2{text-align:center;margin-bottom:2rem;font-size:2rem;color:var(--dark)}
+        .grid{
+            display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem
+        }
+        .card{
+            background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.08);transition:.3s;
+        }
+        .card:hover{transform:translateY(-5px)}
+        .card img{height:200px;object-fit:cover}
+        .card-body{padding:1rem}
+        .price{font-weight:bold;color:var(--gold);margin:.5rem 0}
+        .add-cart{width:100%;background:var(--dark);color:#fff;padding:.6rem;border-radius:var(--radius);transition:.3s}
+        .add-cart:hover{background:var(--gold)}
+
+        /* ------------- ABOUT ------------- */
+        .about{display:flex;flex-wrap:wrap;gap:2rem;align-items:center}
+        .about div{flex:1 1 300px}
+        .about img{flex:1 1 300px;border-radius:var(--radius)}
+
+        /* ------------- CONTACT ------------- */
+        form{display:flex;flex-direction:column;gap:1rem;max-width:600px;margin:auto}
+        input,textarea{padding:.8rem;border:1px solid #ccc;border-radius:var(--radius)}
+        input[type=submit]{background:var(--gold);color:#fff;font-weight:bold;border:none}
+
+        /* ------------- FOOTER ------------- */
+        footer{background:var(--dark);color:#fff;text-align:center;padding:2rem 1rem;margin-top:3rem}
+
+        /* ------------- RESPONSIVE ------------- */
+        @media (max-width:768px){
+            .nav-links{position:fixed;left:-100%;top:60px;flex-direction:column;background:#fff;width:100%;text-align:center;transition:.3s}
+            .nav-links.active{left:0}
+            .hamburger{display:flex}
+            .hero h1{font-size:2.2rem}
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo.svg" alt="ZANTIQ">
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#decor">Home Décor</a>
-      <a href="#jewel">Jewelry</a>
-      <a href="#essential">Essentials</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="home" class="hero">
+<!-- ================= NAVBAR ================= -->
+<header>
+    <div class="nav">
+        <div class="logo">ZANTIQ</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#jewelry">Jewelry</a></li>
+            <li><a href="#decor">Home Decor</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <span>🛒</span>
+            <span>👤</span>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+    <h1>Where Elegance Meets Home</h1>
+    <p>Curated jewelry and home décor pieces that tell your story.</p>
+    <a href="#jewelry" class="btn">Shop Jewelry</a>
+    <a href="#decor" class="btn" style="margin-left:1rem">Shop Home Decor</a>
+</section>
+
+<!-- ================= JEWELRY ================= -->
+<section id="jewelry">
+    <h2>Jewelry Collection</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://source.unsplash.com/600x600/?gold,necklace" alt="Necklace">
+            <div class="card-body">
+                <h3>Golden Drip Necklace</h3>
+                <div class="price">$89</div>
+                <button class="add-cart" onclick="addToCart('Golden Drip Necklace',89)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/600x600/?ring,diamond" alt="Ring">
+            <div class="card-body">
+                <h3>Sage Solitaire Ring</h3>
+                <div class="price">$120</div>
+                <button class="add-cart" onclick="addToCart('Sage Solitaire Ring',120)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/600x600/?earrings,pearl" alt="Earrings">
+            <div class="card-body">
+                <h3>Pearl Drop Earrings</h3>
+                <div class="price">$65</div>
+                <button class="add-cart" onclick="addToCart('Pearl Drop Earrings',65)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/600x600/?bracelet,silver" alt="Bracelet">
+            <div class="card-body">
+                <h3>Silver Infinity Bracelet</h3>
+                <div class="price">$75</div>
+                <button class="add-cart" onclick="addToCart('Silver Infinity Bracelet',75)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= HOME DECOR ================= -->
+<section id="decor">
+    <h2>Home Decor Collection</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://source.unsplash.com/600x600/?vase,interior" alt="Vase">
+            <div class="card-body">
+                <h3>Sage Ceramic Vase</h3>
+                <div class="price">$45</div>
+                <button class="add-cart" onclick="addToCart('Sage Ceramic Vase',45)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/600x600/?candle,decor" alt="Candles">
+            <div class="card-body">
+                <h3>Gold Accent Candles</h3>
+                <div class="price">$35</div>
+                <button class="add-cart" onclick="addToCart('Gold Accent Candles',35)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/600x600/?wall-art,frame" alt="Wall Art">
+            <div class="card-body">
+                <h3>Minimalist Wall Frame</h3>
+                <div class="price">$55</div>
+                <button class="add-cart" onclick="addToCart('Minimalist Wall Frame',55)">Add to Cart</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="https://source.unsplash.com/600x600/?cushion,throw" alt="Cushion">
+            <div class="card-body">
+                <h3>Sage Velvet Cushion</h3>
+                <div class="price">$40</div>
+                <button class="add-cart" onclick="addToCart('Sage Velvet Cushion',40)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about">
     <div>
-      <h1>Precision-Cut Luxury in Metal</h1>
-      <p>Welcome to ZANTIQ, where state-of-the-art laser cutting meets timeless design. Explore handcrafted home décor, statement jewelry, and everyday essentials forged from premium metals and finished with antique grandeur.</p>
-      <a href="#decor" class="btn">Discover Collection</a>
+        <h2>About ZANTIQ</h2>
+        <p>ZANTIQ blends timeless jewelry craftsmanship with curated home décor to create spaces—and selves—that sparkle with individuality. Every piece is selected for its story, sustainability, and style.</p>
+        <p>Founded in 2024, we partner with small artisans across the globe to bring you limited-edition collections that elevate everyday living.</p>
     </div>
-    <div>
-      <img src="https://images.unsplash.com/photo-1565537420149-76a0c0c3d2f1?auto=format&fit=crop&w=800&q=60" alt="Laser-cut brass panel">
-    </div>
-  </section>
+    <img src="https://source.unsplash.com/600x600/?studio,jewelry" alt="Studio">
+</section>
 
-  <section id="decor">
-    <h2>Luxurious ZANTIQ Home Décor</h2>
-    <div class="row">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=60" alt="Wall art">
-        <h3>Baroque Wall Art</h3>
-        <p>3 mm antique brass panels interlock into custom murals, casting regal shadows across your living space.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=60" alt="Candle holder">
-        <h3>Candle Corona</h3>
-        <p>Laser-cut crowns cradle flickering flames, turning candlelight into gilded geometry.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=60" alt="Bookends">
-        <h3>Lattice Bookends</h3>
-        <p>Smoked gunmetal stacks your volumes with architectural weight and artistic air.</p>
-      </div>
-    </div>
-  </section>
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+    <h2>Get in Touch</h2>
+    <form onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Message" required></textarea>
+        <input type="submit" value="Send Message">
+    </form>
+</section>
 
-  <section id="jewel">
-    <h2>Luxurious ZANTIQ Jewelry</h2>
-    <div class="row">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=60" alt="Cuff">
-        <h3>Filigree Cuff</h3>
-        <p>Feather-light titanium filaments, rose-gold PVD coated; regal yet wearable all day.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=60" alt="Pendant">
-        <h3>Mandala Pendant</h3>
-        <p>0.1 mm precision repeats sacred geometry, suspended on matte antique chain.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=60" alt="Earrings">
-        <h3>Lattice Earrings</h3>
-        <p>Hypoallergenic hooks carry oxidized bronze drops that sway like palace chandeliers.</p>
-      </div>
-    </div>
-  </section>
+<!-- ================= FOOTER ================= -->
+<footer>
+    © <span id="year"></span> ZANTIQ. All rights reserved.
+</footer>
 
-  <section id="essential">
-    <h2>ZANTIQ Essentials</h2>
-    <div class="row">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=60" alt="Key holder">
-        <h3>Ornamental Key Hub</h3>
-        <p>Marine-grade stainless organizes keys with palace-worthy lattice wings.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=60" alt="Desk grid">
-        <h3>Desktop Grid</h3>
-        <p>Keep stationery, phone, and fragrance in check; utility never looked this aristocratic.</p>
-      </div>
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=60" alt="Diffuser">
-        <h3>Metal Lace Diffuser</h3>
-        <p>Slide in your preferred aroma pad; laser perforations diffuse scent and style simultaneously.</p>
-      </div>
-    </div>
-  </section>
+<!-- ================= SCRIPTS ================= -->
+<script>
+    // Mobile nav toggle
+    document.getElementById('hamburger').onclick = () => {
+        document.getElementById('navLinks').classList.toggle('active');
+    };
 
-  <section id="contact">
-    <h2>Craft Your Custom Piece</h2>
-    <p>Have a pattern, crest, or dimension in mind? Our engineers and artisans collaborate to materialize exclusive laser-cut metal art for homes, boutiques, and hospitality projects.</p>
-    <a href="mailto:craft@zantiq.com" class="btn">Email Inquiry</a>
-  </section>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <footer>
-    © 2025 ZANTIQ – All metals sustainably sourced, finished by hand, shipped worldwide.
-  </footer>
+    // Add to cart feedback
+    function addToCart(name,price){
+        alert(`Added "${name}" ($${price}) to cart!`);
+    }
+
+    // Form handler
+    function handleSubmit(e){
+        e.preventDefault();
+        alert('Thank you! We will reply within 24 hours.');
+        e.target.reset();
+    }
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click',function(e){
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+            document.getElementById('navLinks').classList.remove('active');
+        });
+    });
+</script>
 </body>
 </html>
-```
