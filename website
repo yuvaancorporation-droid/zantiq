@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZANTIQ – Laser-Cut Luxury</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root{
+      --gold:#c9a45c;
+      --coal:#1e1b17;
+      --cream:#f5f2e8;
+      --rust:#7b5e47;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:'Georgia',serif;color:var(--coal)}
+    body{background:var(--cream);line-height:1.6}
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:1.2rem 4vw;background:var(--coal);
+    }
+    header img{height:42px}
+    nav a{
+      margin-left:2rem;text-decoration:none;color:var(--gold);
+      letter-spacing:.5px;font-size:.95rem;
+    }
+    section{padding:6rem 4vw}
+    h1,h2{letter-spacing:1px}
+    h1{font-size:2.8rem;color:var(--gold)}
+    .hero{display:flex;flex-wrap:wrap;align-items:center;gap:3rem}
+    .hero div{flex:1 1 320px}
+    .hero img{width:100%;border:4px solid var(--rust)}
+    .btn{
+      display:inline-block;margin-top:1.2rem;padding:.9rem 2.2rem;
+      background:var(--gold);color:var(--coal);text-decoration:none;
+      border:2px solid transparent;transition:.3s;
+    }
+    .btn:hover{background:transparent;border-color:var(--gold);color:var(--gold)}
+    .row{display:flex;flex-wrap:wrap;gap:2rem}
+    .card{
+      flex:1 1 260px;background:#fff;border:1px solid var(--rust);
+      text-align:center;padding:2rem;
+    }
+    .card img{width:100%;height:200px;object-fit:cover;margin-bottom:1rem}
+    footer{
+      text-align:center;padding:2.5rem 4vw;background:var(--coal);
+      color:var(--gold);font-size:.85rem;
+    }
+    @media(max-width:700px){
+      header{flex-direction:column;align-items:flex-start}
+      nav a{margin:.5rem 1rem 0 0}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.svg" alt="ZANTIQ">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#decor">Home Décor</a>
+      <a href="#jewel">Jewelry</a>
+      <a href="#essential">Essentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div>
+      <h1>Precision-Cut Luxury in Metal</h1>
+      <p>Welcome to ZANTIQ, where state-of-the-art laser cutting meets timeless design. Explore handcrafted home décor, statement jewelry, and everyday essentials forged from premium metals and finished with antique grandeur.</p>
+      <a href="#decor" class="btn">Discover Collection</a>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1565537420149-76a0c0c3d2f1?auto=format&fit=crop&w=800&q=60" alt="Laser-cut brass panel">
+    </div>
+  </section>
+
+  <section id="decor">
+    <h2>Luxurious ZANTIQ Home Décor</h2>
+    <div class="row">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=60" alt="Wall art">
+        <h3>Baroque Wall Art</h3>
+        <p>3 mm antique brass panels interlock into custom murals, casting regal shadows across your living space.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=60" alt="Candle holder">
+        <h3>Candle Corona</h3>
+        <p>Laser-cut crowns cradle flickering flames, turning candlelight into gilded geometry.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=60" alt="Bookends">
+        <h3>Lattice Bookends</h3>
+        <p>Smoked gunmetal stacks your volumes with architectural weight and artistic air.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="jewel">
+    <h2>Luxurious ZANTIQ Jewelry</h2>
+    <div class="row">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=60" alt="Cuff">
+        <h3>Filigree Cuff</h3>
+        <p>Feather-light titanium filaments, rose-gold PVD coated; regal yet wearable all day.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=60" alt="Pendant">
+        <h3>Mandala Pendant</h3>
+        <p>0.1 mm precision repeats sacred geometry, suspended on matte antique chain.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=60" alt="Earrings">
+        <h3>Lattice Earrings</h3>
+        <p>Hypoallergenic hooks carry oxidized bronze drops that sway like palace chandeliers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="essential">
+    <h2>ZANTIQ Essentials</h2>
+    <div class="row">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=60" alt="Key holder">
+        <h3>Ornamental Key Hub</h3>
+        <p>Marine-grade stainless organizes keys with palace-worthy lattice wings.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1581783898377-1c85bf937427?auto=format&fit=crop&w=800&q=60" alt="Desk grid">
+        <h3>Desktop Grid</h3>
+        <p>Keep stationery, phone, and fragrance in check; utility never looked this aristocratic.</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=60" alt="Diffuser">
+        <h3>Metal Lace Diffuser</h3>
+        <p>Slide in your preferred aroma pad; laser perforations diffuse scent and style simultaneously.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Craft Your Custom Piece</h2>
+    <p>Have a pattern, crest, or dimension in mind? Our engineers and artisans collaborate to materialize exclusive laser-cut metal art for homes, boutiques, and hospitality projects.</p>
+    <a href="mailto:craft@zantiq.com" class="btn">Email Inquiry</a>
+  </section>
+
+  <footer>
+    © 2025 ZANTIQ – All metals sustainably sourced, finished by hand, shipped worldwide.
+  </footer>
+</body>
+</html>
+```
